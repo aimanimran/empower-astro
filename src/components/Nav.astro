@@ -1,0 +1,70 @@
+---
+import { navItems } from '../data/site.js';
+
+// Astro.url.pathname gives the current path, e.g. "/about" or "/".
+// We normalize trailing slashes so "/about/" and "/about" both match.
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+
+function isActive(href) {
+  const clean = href.replace(/\/+$/, '') || '/';
+  return clean === current;
+}
+
+const caret = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+---
+
+<header class="site-nav">
+  <div class="container nav-inner">
+
+    <a href="/" class="nav-brand" aria-label="Empower Psychiatry Home">
+      <img src="/assets/images/logo.png" alt="Empower Psychiatry Logo" class="logo-mark" />
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="7" x2="21" y2="7" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="17" x2="21" y2="17" />
+      </svg>
+    </button>
+
+    <nav>
+      <ul class="nav-links">
+        {navItems.map((item) =>
+          item.dropdown ? (
+            <li class="nav-dropdown">
+              <div class="nav-dropdown-trigger">
+                <a href={item.href} class={isActive(item.href) ? 'active' : undefined}>
+                  {item.label}
+                </a>
+                <button
+                  class="dropdown-toggle"
+                  aria-expanded="false"
+                  aria-label={`Expand ${item.label} menu`}
+                  type="button"
+                  set:html={caret}
+                />
+              </div>
+              <ul class="dropdown-menu">
+                {item.dropdown.map((sub) => (
+                  <li>
+                    <a href={sub.href} class={isActive(sub.href) ? 'active' : undefined}>
+                      {sub.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a href={item.href} class={isActive(item.href) ? 'active' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          )
+        )}
+      </ul>
+    </nav>
+
+  </div>
+</header>

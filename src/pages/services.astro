@@ -1,0 +1,135 @@
+---
+import Base from '../layouts/Base.astro';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://empowerpsychiatryil.com/#practice",
+  "name": "Empower Psychiatry",
+  "url": "https://empowerpsychiatryil.com",
+  "availableService": [
+    { "@type": "MedicalProcedure", "name": "Comprehensive Psychiatric Evaluations", "description": "Psychiatric evaluations that consider each individual's history, environment, and unique needs, including ADHD assessment, mood disorders, anxiety evaluations, and developmental concerns.", "procedureType": "https://schema.org/DiagnosticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Medication Management", "description": "Careful monitoring and adjustment of psychiatric medication with focus on minimizing side effects and supporting long-term wellbeing. Includes regular monitoring and precision medication technology.", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Family Guidance", "description": "Practical guidance, education, and support for families, including parent coaching, IEP/504 support, communication strategies, and behavior strategies.", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Care Coordination", "description": "Coordinated care with therapists, physicians, schools, and support systems. Includes school consultations, therapist coordination, and specialist referrals.", "procedureType": "https://schema.org/TherapeuticProcedure" }
+  ],
+  "availableTest": [
+    { "@type": "MedicalTest", "name": "ADHD Assessment" },
+    { "@type": "MedicalTest", "name": "Mood Disorder Evaluation" },
+    { "@type": "MedicalTest", "name": "Anxiety Evaluation" },
+    { "@type": "MedicalTest", "name": "Developmental Concerns Assessment" }
+  ]
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "url": "https://empowerpsychiatryil.com/services.html",
+  "name": "Services — Empower Psychiatry",
+  "about": [
+    { "@type": "MedicalCondition", "name": "Bipolar Disorder" },
+    { "@type": "MedicalCondition", "name": "Depression" },
+    { "@type": "MedicalCondition", "name": "Obsessive-Compulsive Disorder", "alternateName": "OCD" },
+    { "@type": "MedicalCondition", "name": "Anxiety Disorders" },
+    { "@type": "MedicalCondition", "name": "Panic Disorder" },
+    { "@type": "MedicalCondition", "name": "Dementia" },
+    { "@type": "MedicalCondition", "name": "Post-Traumatic Stress Disorder", "alternateName": "PTSD" },
+    { "@type": "MedicalCondition", "name": "Psychotic Disorders" },
+    { "@type": "MedicalCondition", "name": "Autism Spectrum Disorder" },
+    { "@type": "MedicalCondition", "name": "Developmental Disorders of Infancy and Early Childhood" },
+    { "@type": "MedicalCondition", "name": "Perinatal Psychiatric Disorders" },
+    { "@type": "MedicalCondition", "name": "Impulse Control Disorders" },
+    { "@type": "MedicalCondition", "name": "Body Image and Self-Esteem Issues" },
+    { "@type": "MedicalCondition", "name": "Oppositional Defiant Disorder" },
+    { "@type": "MedicalCondition", "name": "Disruptive Behavior Disorders" },
+    { "@type": "MedicalCondition", "name": "Attention Deficit Hyperactivity Disorder", "alternateName": "ADHD" }
+  ],
+  "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+  "isPartOf": { "@id": "https://empowerpsychiatryil.com/#website" }
+};
+---
+
+<Base
+  title="Services — Empower Complete Care Psychiatry"
+  description="Comprehensive psychiatric evaluations, medication management, family guidance, and care coordination — evidence-based treatments for the whole person."
+  jsonLd={[businessSchema, webPageSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="services-intro reveal">
+        <img src="/assets/images/logo.png" alt="Empower Complete Care Psychiatry Logo" class="logo-mark" />
+        <div>
+          <h1>Comprehensive Services</h1>
+          <p>Every service we provide incorporates the latest evidence-based treatments and medication advances, while carefully considering side effects, long-term wellbeing, and the right fit for each unique patient.</p>
+        </div>
+      </div>
+
+      <div class="service-cards">
+        <article class="service-card reveal">
+          <h3>Comprehensive Evaluations</h3>
+          <p>Through comprehensive psychiatric evaluations, that consider each individual's history, environment, and unique needs using the latest tools, frameworks, and clinical insights.</p>
+          <div class="tag-list">
+            <span class="tag">ADHD Assessment</span>
+            <span class="tag">Mood Disorders</span>
+            <span class="tag">Anxiety Evaluations</span>
+            <span class="tag">Developmental Concerns</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <h3>Medication Management</h3>
+          <p>When medication is appropriate, we carefully monitor and adjust treatment while minimizing side effects and supporting long-term wellbeing.</p>
+          <div class="tag-list">
+            <span class="tag">Regular Monitoring</span>
+            <span class="tag">Precision Medication Tech</span>
+            <span class="tag">Conservative Approach</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <h3>Family Guidance</h3>
+          <p>Families receive practical guidance, education, and support to help reinforce progress and create stability at home.</p>
+          <div class="tag-list">
+            <span class="tag">Parent Coaching</span>
+            <span class="tag">IEP/504 Support</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Behaviour Strategies</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <h3>Care Coordination</h3>
+          <p>We work closely with therapists, physicians, schools, and support systems to ensure care remains connected, consistent, and effective.</p>
+          <div class="tag-list">
+            <span class="tag">School Consultations</span>
+            <span class="tag">Therapist Coordination</span>
+            <span class="tag">Specialist Referrals</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="conditions-block reveal">
+        <div>
+          <h2 style="margin-bottom: 1.5rem;">Conditions We Treat</h2>
+          <ul class="conditions-list">
+            <li>Bipolar Disorder, Depression</li>
+            <li>OCD, Anxiety Disorders, Panic Disorder</li>
+            <li>Dementia</li>
+            <li>PTSD</li>
+            <li>Psychotic Disorders</li>
+            <li>Autism Spectrum Disorder</li>
+            <li>Developmental Disorders of Infancy and Early Childhood</li>
+            <li>Pre and post partum Psychiatric disorders</li>
+            <li>Impulse Control Disorders</li>
+            <li>Low Self Esteem and Body image issues</li>
+            <li>Oppositional Defiant Disorders</li>
+            <li>Disruptive Behaviors</li>
+          </ul>
+        </div>
+        <div class="conditions-visual">
+          <img src="/assets/images/conditions.png" alt="Mental health support and wellness" class="conditions-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Reusable shell for a single resource topic page.
+// Pass title/eyebrow/intro/jsonLd as props; put the two-column body
+// (main article + sidebar) into the default slot.
+const {
+  title,
+  description,
+  eyebrow = 'Mental Health Education',
+  jsonLd = [],
+} = Astro.props;
+---
+
+<Base title={`${title} | Empower Psychiatry`} description={description} jsonLd={jsonLd}>
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">{eyebrow}</div>
+        <h1 class="section-title">{title}</h1>
+        <p class="section-desc">{description}</p>
+      </div>
+
+      <div class="resource-page-layout">
+        <slot />
+      </div>
+    </div>
+  </section>
+</Base>

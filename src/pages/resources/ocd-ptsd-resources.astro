@@ -1,0 +1,134 @@
+---
+import ResourcePage from '../../components/ResourcePage.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "OCD & PTSD",
+    "description": "Educational information about obsessive thoughts, compulsive behaviors, trauma, and recovery support.",
+    "url": "https://empowerpsychiatryil.com/resources/ocd-ptsd-resources",
+    "about": "Obsessive-Compulsive Disorder",
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "Empower Psychiatry",
+      "url": "https://empowerpsychiatryil.com",
+      "telephone": "+1-630-326-3840",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "303 E Army Trail Rd, Suite 111",
+        "addressLocality": "Bloomingdale",
+        "addressRegion": "IL",
+        "postalCode": "60108"
+      }
+    }
+  }
+];
+---
+
+<ResourcePage
+  title="OCD & PTSD"
+  description="Educational information about obsessive thoughts, compulsive behaviors, trauma, and recovery support."
+  jsonLd={jsonLd}
+>
+<article class="resource-main-content reveal">
+
+            <h2>Understanding OCD and PTSD</h2>
+
+            <p>
+              Obsessive-Compulsive Disorder (OCD) and Post-Traumatic Stress Disorder (PTSD) are mental health conditions
+              that can significantly impact emotional wellbeing, daily functioning, and relationships. Although these
+              conditions are different, both can involve intense distress, intrusive thoughts, anxiety, and avoidance
+              behaviors.
+            </p>
+
+            <p>
+              OCD is characterized by recurring obsessions and compulsions, while PTSD may develop after exposure to
+              traumatic experiences and can involve flashbacks, hypervigilance, emotional distress, or sleep
+              disturbances.
+            </p>
+
+            <h2>Common Symptoms</h2>
+
+            <ul class="resource-list">
+              <li>Intrusive thoughts or distressing memories</li>
+              <li>Compulsive rituals or repetitive behaviors</li>
+              <li>Hypervigilance or heightened anxiety</li>
+              <li>Avoidance of triggers or reminders</li>
+              <li>Difficulty sleeping or nightmares</li>
+              <li>Panic symptoms or emotional overwhelm</li>
+              <li>Difficulty concentrating or feeling emotionally safe</li>
+            </ul>
+
+            <h2>Evidence-Based Treatment</h2>
+
+            <p>
+              Effective treatment may include psychiatric care, medication management, cognitive behavioral therapy,
+              exposure and response prevention (ERP), trauma-focused therapy, and supportive counseling. Treatment plans
+              are individualized based on symptoms, history, and personal goals.
+            </p>
+
+            <p>
+              Recovery is possible, and many individuals experience significant improvement with consistent support and
+              evidence-based care.
+            </p>
+
+            <h2>Seeking Support</h2>
+
+            <p>
+              Individuals coping with trauma or obsessive-compulsive symptoms often benefit from supportive environments
+              and compassionate care. Mental health professionals throughout Addison, Bloomingdale, and the greater
+              Chicagoland area can help patients access structured treatment and long-term support resources.
+            </p>
+
+          </article>
+
+          <aside class="resource-sidebar reveal">
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                Trusted Organizations
+              </h3>
+
+              <ul>
+                <li><a href="https://iocdf.org/" target="_blank" rel="noopener noreferrer">International OCD
+                    Foundation</a></li>
+                <li><a href="https://www.ptsd.va.gov/" target="_blank" rel="noopener noreferrer">National Center for
+                    PTSD</a></li>
+                <li><a href="https://www.samhsa.gov/" target="_blank" rel="noopener noreferrer">SAMHSA</a></li>
+              </ul>
+
+            </div>
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                Local & Crisis Support
+              </h3>
+
+              <p>
+                For urgent emotional support, call or text 988 for the Suicide & Crisis Lifeline. Residents in Addison,
+                Bloomingdale, DuPage County, and the greater Chicagoland area may also benefit from local counseling
+                centers, hospitals, and emergency mental health services.
+              </p>
+
+            </div>
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                When To Seek Help
+              </h3>
+
+              <p>
+                Consider professional evaluation if symptoms are affecting work, school, sleep, relationships, emotional
+                wellbeing, or daily functioning. Early support and treatment can improve long-term outcomes and quality
+                of life.
+              </p>
+
+            </div>
+
+          </aside>
+
+</ResourcePage>

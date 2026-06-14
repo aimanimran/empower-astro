@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+
+const practiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://empowerpsychiatryil.com/#practice",
+  "name": "Empower Psychiatry",
+  "legalName": "Empower Psychiatry PLLC",
+  "alternateName": "Empower Psychiatry",
+  "url": "https://empowerpsychiatryil.com",
+  "logo": "https://empowerpsychiatryil.com/assets/images/full_logo.png",
+  "image": "https://empowerpsychiatryil.com/assets/images/full_logo.png",
+  "description": "Evidence-based, complete-care psychiatry practice in Bloomingdale, IL serving the Chicagoland area. Beyond medication management — comprehensive psychiatric evaluations, family guidance, and coordinated care for adults, adolescents, and children.",
+  "medicalSpecialty": ["Psychiatric", "Psychiatry"],
+  "telephone": "+1-630-326-3840",
+  "faxNumber": "+1-630-326-3848",
+  "email": "Appointments@EmpowerMDIL.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "303 E Army Trail Rd, Suite 111",
+    "addressLocality": "Bloomingdale",
+    "addressRegion": "IL",
+    "postalCode": "60108",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bloomingdale" },
+    { "@type": "City", "name": "Chicago" },
+    { "@type": "AdministrativeArea", "name": "Chicagoland" },
+    { "@type": "State", "name": "Illinois" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "15:00", "closes": "18:00", "description": "In-person appointments" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:00", "closes": "18:00", "description": "In-person appointments" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "18:00", "description": "In-person appointments" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "15:30", "closes": "18:00", "description": "Telepsychiatry appointments" }
+  ],
+  "availableService": [
+    { "@type": "MedicalProcedure", "name": "Comprehensive Psychiatric Evaluations", "procedureType": "https://schema.org/DiagnosticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Medication Management", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Family Guidance and Parent Coaching", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Care Coordination with Schools and Therapists", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalTherapy", "name": "Telepsychiatry" }
+  ],
+  "healthPlanNetworkTier": "in-network",
+  "isAcceptingNewPatients": true,
+  "paymentAccepted": ["Insurance", "Private Pay", "Medicaid", "Medicare"],
+  "currenciesAccepted": "USD",
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": "https://empowerpsychiatryil.clientsecure.me",
+    "name": "Book Appointment"
+  },
+  "sameAs": ["https://www.healthgrades.com/physician/dr-tanvir-mushtaq-xylmjdh"]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://empowerpsychiatryil.com/#website",
+  "url": "https://empowerpsychiatryil.com",
+  "name": "Empower Psychiatry",
+  "publisher": { "@id": "https://empowerpsychiatryil.com/#practice" },
+  "inLanguage": "en-US"
+};
+---
+
+<Base
+  title="Empower Complete Care Psychiatry — Bloomingdale, IL"
+  description="Evidence-based, complete-care psychiatry in Bloomingdale, IL. Beyond medication management. Same-day response, appointments within one week."
+  jsonLd={[practiceSchema, websiteSchema]}
+>
+  <!-- ===== HERO ===== -->
+  <section class="hero container">
+    <div class="hero-logo">
+      <img src="/assets/images/full_logo.png" alt="Empower Complete Care Psychiatry Logo" class="hero-logo-image" />
+    </div>
+
+    <h1 class="hero-headline">Evidence Based, Complete-Care Psychiatry</h1>
+    <p class="hero-sub">— Beyond Medication Management</p>
+
+    <div class="hero-cta">
+      <a href="/contact" class="btn btn-lg">
+        Schedule a Consultation
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="/services" class="btn btn-lg">
+        View Our Services
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PHILOSOPHY / PILLARS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Our Philosophy</div>
+        <h2 class="section-title">More Than Medicine</h2>
+        <p class="section-desc">True healing happens when we address the whole person—their mind, environment, relationships, and potential. Our collaborative approach ensures no one walks this path alone.</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <svg class="pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10" cy="11" r="3"/><circle cx="22" cy="11" r="3"/>
+            <path d="M4 24c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 24c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+          </svg>
+          <h3>Family Partnership</h3>
+          <p>Healing is stronger with support. We help families and loved ones understand the process and participate with confidence.</p>
+        </article>
+
+        <article class="pillar reveal">
+          <svg class="pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="16" cy="16" r="3"/>
+            <circle cx="16" cy="6" r="2"/><circle cx="16" cy="26" r="2"/>
+            <circle cx="6" cy="16" r="2"/><circle cx="26" cy="16" r="2"/>
+            <line x1="16" y1="8" x2="16" y2="13"/><line x1="16" y1="19" x2="16" y2="24"/>
+            <line x1="8" y1="16" x2="13" y2="16"/><line x1="19" y1="16" x2="24" y2="16"/>
+          </svg>
+          <h3>Community Connections</h3>
+          <p>Connection creates momentum. We guide patients toward communities and activities that nurture purpose and belonging.</p>
+        </article>
+
+        <article class="pillar reveal">
+          <svg class="pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 10h20v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V10z"/>
+            <path d="M10 10V8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2"/>
+            <line x1="16" y1="14" x2="16" y2="22"/><line x1="12" y1="18" x2="20" y2="18"/>
+          </svg>
+          <h3>Care Team Coordination</h3>
+          <p>Integrated care matters. We work closely with therapists, physicians, schools, and specialists to keep treatment aligned.</p>
+        </article>
+
+        <article class="pillar reveal">
+          <svg class="pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 4 C 10 10, 6 14, 6 19 a 10 10 0 0 0 20 0 C 26 14, 22 10, 16 4z"/>
+            <path d="M16 12v10"/><path d="M12 17h8"/>
+          </svg>
+          <h3>Social Services Resources</h3>
+          <p>Wellness depends on stability. We help access practical resources that support daily life and long-term progress.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:left; max-width:none;">
+        <h2 class="section-title" style="text-align:left;">Why Families Choose Us</h2>
+        <p class="section-desc" style="text-align:left;">
+          Because exceptional care should be timely, personal, and connected to every part of a person's life.
+        </p>
+      </div>
+
+      <div class="why-layout">
+        <div class="why-content reveal">
+          <div class="why-simple-item">
+            <h4>Same-Day Response</h4>
+            <p>Calls returned promptly, almost always on the same day.</p>
+          </div>
+          <div class="why-simple-item">
+            <h4>Appointments Within One Week</h4>
+            <p>Timely access to care when families need it most.</p>
+          </div>
+          <div class="why-simple-item">
+            <h4>Holistic Approach</h4>
+            <p>Whole-person care tailored to each person's needs.</p>
+          </div>
+          <div class="why-simple-item">
+            <h4>Specialist Referrals</h4>
+            <p>Referrals to trusted diagnostic partners and therapists.</p>
+          </div>
+          <div class="why-simple-item">
+            <h4>School Coordination</h4>
+            <p>Collaboration with schools and agencies to support student wellbeing and success.</p>
+          </div>
+        </div>
+
+        <div class="why-video reveal">
+          <iframe
+            src="https://www.youtube.com/embed/trVto0Mnadc?rel=0"
+            title="Empower Psychiatry Introduction Video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

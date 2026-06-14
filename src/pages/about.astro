@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "@id": "https://empowerpsychiatryil.com/about.html#physician",
+  "name": "Dr. Tanvir Mushtaq, MD",
+  "honorificPrefix": "Dr.",
+  "honorificSuffix": "MD",
+  "jobTitle": "Board-Certified Adult Psychiatrist",
+  "image": "https://empowerpsychiatryil.com/assets/images/doctor.png",
+  "url": "https://empowerpsychiatryil.com/about.html",
+  "description": "Board-certified adult psychiatrist with a fellowship in child and adolescent psychiatry and over 17 years of experience. Trained at New York Medical College, practicing in the Chicagoland area since 2012.",
+  "medicalSpecialty": ["Psychiatric", "Adult Psychiatry", "Child and Adolescent Psychiatry"],
+  "alumniOf": { "@type": "EducationalOrganization", "name": "New York Medical College" },
+  "knowsAbout": [
+    "Mood Disorders", "Anxiety Disorders", "Trauma", "PTSD", "Psychotic Disorders",
+    "Autism Spectrum Disorder", "Developmental Disorders", "Perinatal Mental Health",
+    "ADHD", "Behavioral Disorders", "Bipolar Disorder", "Depression", "OCD"
+  ],
+  "worksFor": { "@id": "https://empowerpsychiatryil.com/#practice" },
+  "workLocation": {
+    "@type": "MedicalClinic",
+    "name": "Empower Psychiatry",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "303 E Army Trail Rd, Suite 111",
+      "addressLocality": "Bloomingdale",
+      "addressRegion": "IL",
+      "postalCode": "60108",
+      "addressCountry": "US"
+    }
+  },
+  "sameAs": ["https://www.healthgrades.com/physician/dr-tanvir-mushtaq-xylmjdh"]
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://empowerpsychiatryil.com/about.html",
+  "name": "About Dr. Mushtaq — Empower Psychiatry",
+  "mainEntity": { "@id": "https://empowerpsychiatryil.com/about.html#physician" },
+  "isPartOf": { "@id": "https://empowerpsychiatryil.com/#website" }
+};
+---
+
+<Base
+  title="About Us — Empower Complete Care Psychiatry"
+  description="Meet Dr. Mushtaq MD, board-certified adult psychiatrist with 17+ years of experience serving the Chicagoland area."
+  jsonLd={[physicianSchema, aboutPageSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="doctor-photo reveal">
+          <img src="/assets/images/doctor.png" alt="Dr Mushtaq MD" />
+        </div>
+
+        <div class="about-text reveal">
+          <h1>
+            <img src="/assets/images/logo.png" alt="Empower Complete Care Psychiatry Logo" class="about-logo" />
+            Meet Your Doctor
+          </h1>
+          <p>Dr Mushtaq MD is a board-certified adult psychiatrist with a fellowship in child and adolescent psychiatry and over 17 years of experience. She was trained at New York Medical College and has been practicing in the Chicagoland area since 2012.</p>
+          <p>She has a firm belief in a holistic approach to psychiatry beyond medication - partnering with families, schools, and state agencies to create supportive environments that help patients thrive while staying aligned with the latest advances in psychiatric care.</p>
+          <p>Her clinical focus includes mood and anxiety disorders, trauma and psychotic conditions, developmental and autism spectrum disorders, perinatal mental health, and behavioral challenges across the lifespan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

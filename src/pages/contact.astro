@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://empowerpsychiatryil.com/contact.html",
+  "name": "Contact — Empower Psychiatry",
+  "mainEntity": { "@id": "https://empowerpsychiatryil.com/#practice" },
+  "isPartOf": { "@id": "https://empowerpsychiatryil.com/#website" }
+};
+---
+
+<Base
+  title="Contact Us — Empower Complete Care Psychiatry"
+  description="Schedule an appointment with Empower Complete Care Psychiatry in Bloomingdale, IL. In-person and telepsychiatry available."
+  jsonLd={[contactSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+
+          <div class="contact-heading">
+            <img src="/assets/images/logo.png" alt="Empower Complete Care Psychiatry Logo" class="about-logo" />
+            <div>
+              <h1>Empower Psychiatry PLLC</h1>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Our Office</h3>
+            <p>
+              <a href={site.mapUrl} target="_blank" rel="noopener">
+                {site.address.street}<br />
+                {site.address.locality}, {site.address.region} {site.address.postalCode}
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-card appointment-card">
+            <h3>Schedule an Appointment</h3>
+
+            <a href={site.bookingUrl} class="btn btn-lg book-now-btn" target="_blank" rel="noopener">
+              Book Now
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+            &nbsp; &nbsp; &nbsp; <b> OR </b>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <strong>Email:</strong>
+                <a href={`mailto:${site.emailAppointments}`}>{site.emailAppointments}</a>
+              </div>
+              <div class="contact-method">
+                <strong>Phone:</strong>
+                <a href={`tel:${site.phoneRaw}`}>{site.phone}</a>
+              </div>
+              <div class="contact-method">
+                <strong>Fax:</strong>
+                <span>{site.fax}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Hours of Operation</h3>
+            <div class="hours-grid">
+              <div>
+                <h4>In Person</h4>
+                <ul>
+                  <li>Tuesdays: 3–6 PM</li>
+                  <li>Fridays: 1–6 PM</li>
+                  <li>Saturdays: 10–6 PM</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Telepsychiatry</h4>
+                <ul>
+                  <li>Weekdays: 3:30–6 PM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-visual reveal">
+          <img src="/assets/images/couch.png" alt="Empower Psychiatry office waiting room" class="contact-image" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Base>

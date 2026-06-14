@@ -1,0 +1,47 @@
+---
+import { site, footerLinks } from '../data/site.js';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="/assets/images/full_logo_white.png" alt="Empower Care Psychiatry Logo" class="mark" />
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Insurances Accepted</h4>
+        <p>{site.insurances}</p>
+        <p><em>Private pay options also available</em></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul style="text-decoration: underline;">
+          {footerLinks.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p>{site.address.street}<br />{site.address.locality}, {site.address.region} {site.address.postalCode}</p>
+        <p>
+          Email:<br />
+          <a href={`mailto:${site.emailAppointments}`}>{site.emailAppointments}</a><br />
+          <a href={`mailto:${site.emailOffice}`}>{site.emailOffice}</a>
+        </p>
+        <p>
+          Call: <a href={`tel:${site.phoneRaw}`}>{site.phone}</a><br />
+          Fax: <a href={`tel:${site.faxRaw}`}>{site.fax}</a><br />
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright © <span data-year>{year}</span> {site.legalName}. All rights reserved.
+    </div>
+  </div>
+</footer>

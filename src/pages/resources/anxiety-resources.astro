@@ -1,0 +1,134 @@
+---
+import ResourcePage from '../../components/ResourcePage.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Anxiety Disorders",
+    "description": "Educational resources about generalized anxiety, panic, social anxiety, and evidence-based treatment options.",
+    "url": "https://empowerpsychiatryil.com/resources/anxiety-resources",
+    "about": "Anxiety Disorders",
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "Empower Psychiatry",
+      "url": "https://empowerpsychiatryil.com",
+      "telephone": "+1-630-326-3840",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "303 E Army Trail Rd, Suite 111",
+        "addressLocality": "Bloomingdale",
+        "addressRegion": "IL",
+        "postalCode": "60108"
+      }
+    }
+  }
+];
+---
+
+<ResourcePage
+  title="Anxiety Disorders"
+  description="Educational resources about generalized anxiety, panic, social anxiety, and evidence-based treatment options."
+  jsonLd={jsonLd}
+>
+    <article class="resource-main-content reveal">
+
+            <h2>
+              Understanding Anxiety Disorders
+            </h2>
+
+            <p>
+              Anxiety disorders are among the most common mental health conditions
+              and can affect emotional wellbeing, physical health, relationships,
+              work performance, and daily functioning.
+            </p>
+
+            <p>
+              While occasional stress is a normal part of life, persistent anxiety
+              that interferes with functioning may benefit from professional support.
+            </p>
+
+            <h2>
+              Common Symptoms
+            </h2>
+
+            <ul class="resource-list">
+
+              <li>Persistent worry or racing thoughts</li>
+              <li>Panic attacks or sudden intense fear</li>
+              <li>Difficulty sleeping</li>
+              <li>Muscle tension or physical stress symptoms</li>
+              <li>Avoidance behaviors</li>
+              <li>Difficulty concentrating</li>
+
+            </ul>
+
+            <h2>
+              Treatment Approaches
+            </h2>
+
+            <p>
+              Anxiety disorders are highly treatable. Treatment may include
+              psychotherapy, medication management, lifestyle interventions,
+              sleep optimization, mindfulness strategies, and stress reduction.
+            </p>
+
+            <p>
+              Cognitive behavioral therapy (CBT) is one of the most researched
+              and effective approaches for anxiety-related conditions.
+            </p>
+
+          </article>
+
+          <aside class="resource-sidebar reveal">
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                Trusted Organizations
+              </h3>
+
+              <ul>
+
+                <li>
+                  <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank"
+                    rel="noopener noreferrer">
+
+                    NIMH Anxiety Disorders
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://adaa.org/" target="_blank" rel="noopener noreferrer">
+
+                    Anxiety & Depression Association
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.samhsa.gov/" target="_blank" rel="noopener noreferrer">
+
+                    SAMHSA
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                When To Seek Help
+              </h3>
+
+              <p>
+                Consider professional evaluation if anxiety symptoms are causing
+                significant distress, interfering with work or relationships,
+                affecting sleep, or limiting daily activities.
+              </p>
+
+            </div>
+
+          </aside>
+</ResourcePage>

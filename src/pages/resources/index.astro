@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+import { resourceTopics } from '../../data/site.js';
+
+const practiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://empowerpsychiatryil.com/#practice",
+  "name": "Empower Psychiatry",
+  "legalName": "Empower Psychiatry PLLC",
+  "url": "https://empowerpsychiatryil.com",
+  "telephone": "+1-630-326-3840",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "303 E Army Trail Rd, Suite 111",
+    "addressLocality": "Bloomingdale",
+    "addressRegion": "IL",
+    "postalCode": "60108",
+    "addressCountry": "US"
+  },
+  "medicalSpecialty": ["Psychiatry", "Mental Health"],
+  "areaServed": [{ "@type": "State", "name": "Illinois" }]
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Mental Health Resources",
+  "url": "https://empowerpsychiatryil.com/resources.html",
+  "description": "Mental health education, crisis support, and trusted psychiatric resources for patients and families."
+};
+---
+
+<Base
+  title="Mental Health Resources | Empower Psychiatry — Bloomingdale, IL"
+  description="Trusted mental health resources for patients and families across Illinois. Educational tools, crisis support, and evidence-based psychiatric information from Empower Psychiatry."
+  jsonLd={[practiceSchema, webPageSchema]}
+>
+  <!-- HERO -->
+  <section class="section resources-hero">
+    <div class="container">
+      <div class="section-header reveal">
+        <h1 class="section-title">Mental Health Resource Library</h1>
+        <p class="section-desc resources-intro">
+          Trusted educational resources, treatment information, and support tools
+          for patients and families navigating mental health care.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SUPPORT -->
+  <section class="resources-support-strip">
+    <div class="container">
+      <div class="support-strip-inner reveal">
+        <div class="support-emergency-copy">
+          <strong>Need immediate help?</strong>
+          <p>
+            If you or someone you know is experiencing a mental health crisis,
+            suicidal thoughts, or needs urgent emotional support, these services
+            are available 24/7.
+          </p>
+        </div>
+
+        <div class="support-links">
+          <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">
+            <strong>Call or Text 988</strong>
+            <span>Immediate crisis support for emotional distress, suicidal thoughts, or mental health emergencies.</span>
+          </a>
+          <a href="https://www.crisistextline.org/" target="_blank" rel="noopener noreferrer">
+            <strong>Crisis Text Support</strong>
+            <span>Free text-based crisis counseling with trained responders available anytime.</span>
+          </a>
+          <a href="https://www.dhs.state.il.us/page.aspx?item=123539" target="_blank" rel="noopener noreferrer">
+            <strong>Illinois CARES</strong>
+            <span>Statewide mental health and recovery resources for Illinois residents.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCE GRID -->
+  <section class="section resources-overview-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Explore By Topic</div>
+        <h2 class="section-title">Browse Mental Health Topics</h2>
+        <p class="section-desc">
+          Explore educational guides, treatment information, coping strategies,
+          and trusted national organizations for common psychiatric and behavioral
+          health conditions treated at Empower Psychiatry.
+        </p>
+      </div>
+
+      <div class="resource-topic-grid">
+        {resourceTopics.map((topic) => (
+          <a href={`/resources/${topic.slug}`} class="resource-topic-card reveal">
+            <h3>{topic.cardTitle}</h3>
+            <p>{topic.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="resources-disclaimer">
+    <div class="container">
+      <p class="reveal">
+        These resources are provided for educational purposes only and are not a substitute for professional medical advice or emergency care.
+      </p>
+    </div>
+  </section>
+</Base>

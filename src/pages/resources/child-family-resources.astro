@@ -1,0 +1,133 @@
+---
+import ResourcePage from '../../components/ResourcePage.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Child & Family Support",
+    "description": "Parenting support, school guidance, behavioral resources, and child psychiatry educational tools.",
+    "url": "https://empowerpsychiatryil.com/resources/child-family-resources",
+    "about": "Child and Family Mental Health",
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "Empower Psychiatry",
+      "url": "https://empowerpsychiatryil.com",
+      "telephone": "+1-630-326-3840",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "303 E Army Trail Rd, Suite 111",
+        "addressLocality": "Bloomingdale",
+        "addressRegion": "IL",
+        "postalCode": "60108"
+      }
+    }
+  }
+];
+---
+
+<ResourcePage
+  title="Child & Family Support"
+  description="Parenting support, school guidance, behavioral resources, and child psychiatry educational tools."
+  jsonLd={jsonLd}
+>
+<article class="resource-main-content reveal">
+
+            <h2>Supporting Children and Families</h2>
+
+            <p>
+              Mental health challenges can affect children, adolescents, and entire families in different ways.
+              Emotional difficulties, behavioral concerns, academic stress, family conflict, anxiety, trauma, and mood
+              symptoms can impact development, relationships, and daily functioning.
+            </p>
+
+            <p>
+              Early support and compassionate intervention can improve emotional resilience and help families build
+              healthier communication patterns, coping skills, and long-term stability.
+            </p>
+
+            <h2>Common Concerns in Children and Adolescents</h2>
+
+            <ul class="resource-list">
+              <li>Anxiety, fears, or school avoidance</li>
+              <li>Behavioral outbursts or emotional dysregulation</li>
+              <li>Attention or learning difficulties</li>
+              <li>Depression or social withdrawal</li>
+              <li>Sleep disturbances</li>
+              <li>Family stress or communication challenges</li>
+              <li>Trauma-related symptoms</li>
+            </ul>
+
+            <h2>Family-Centered Treatment</h2>
+
+            <p>
+              Treatment for children and adolescents often works best when families are actively involved. Care may
+              include therapy, medication management, behavioral support strategies, parent education, school
+              collaboration, and structured routines that support emotional growth.
+            </p>
+
+            <p>
+              Family-centered approaches can strengthen communication, improve emotional understanding, and create a
+              more supportive home environment. Parents and caregivers also benefit from guidance and resources as they
+              navigate developmental or behavioral concerns.
+            </p>
+
+            <h2>Community and School Support</h2>
+
+            <p>
+              Schools, counselors, pediatricians, and mental health professionals throughout Addison, Bloomingdale, and
+              DuPage County can provide important support systems for families. Educational accommodations, counseling
+              services, and community-based resources may help children succeed socially, emotionally, and academically.
+            </p>
+
+          </article>
+
+          <aside class="resource-sidebar reveal">
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                Trusted Organizations
+              </h3>
+
+              <ul>
+                <li><a href="https://www.aacap.org/" target="_blank" rel="noopener noreferrer">American Academy of Child
+                    & Adolescent Psychiatry</a></li>
+                <li><a href="https://www.samhsa.gov/" target="_blank" rel="noopener noreferrer">SAMHSA</a></li>
+                <li><a href="https://icmhp.org/" target="_blank" rel="noopener noreferrer">Illinois Children’s Mental
+                    Health Partnership</a></li>
+              </ul>
+
+            </div>
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                Local & Crisis Support
+              </h3>
+
+              <p>
+                For urgent emotional support, call or text 988 for the Suicide & Crisis Lifeline. Residents in Addison,
+                Bloomingdale, DuPage County, and the greater Chicagoland area may also benefit from local counseling
+                centers, hospitals, and emergency mental health services.
+              </p>
+
+            </div>
+
+            <div class="resource-sidebar-card">
+
+              <h3>
+                When To Seek Help
+              </h3>
+
+              <p>
+                Consider professional evaluation if symptoms are affecting work, school, sleep, relationships, emotional
+                wellbeing, or daily functioning. Early support and treatment can improve long-term outcomes and quality
+                of life.
+              </p>
+
+            </div>
+
+          </aside>
+
+</ResourcePage>

@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// Get all non-draft posts, newest first.
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base
+  title="Blog — Empower Complete Care Psychiatry"
+  description="Articles and updates from Dr. Mushtaq at Empower Complete Care Psychiatry."
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Empower Psychiatry</div>
+        <h1 class="section-title">Dr. Mushtaq's Blog</h1>
+        <p class="section-desc">
+          Thoughts, education, and updates on mental health and our practice.
+        </p>
+      </div>
+
+      {posts.length === 0 ? (
+        <p class="blog-empty reveal">No posts yet — check back soon!</p>
+      ) : (
+        <div class="blog-list">
+          {posts.map((post) => (
+            <a href={`/blog/${post.slug}`} class="blog-card reveal">
+              {post.data.image && (
+                <div class="blog-card-image">
+                  <img src={post.data.image} alt={post.data.title} />
+                </div>
+              )}
+              <div class="blog-card-body">
+                <h2>{post.data.title}</h2>
+                <div class="blog-card-meta">
+                  <span>{fmt(post.data.date)}</span>
+                  <span>·</span>
+                  <span>{post.data.author}</span>
+                </div>
+                {post.data.description && <p>{post.data.description}</p>}
+                <span class="blog-card-readmore">Read more →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import { testimonials } from '../data/testimonials.js';
+
+// Build review schema from the same testimonial data.
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://empowerpsychiatryil.com/#practice",
+  "name": "Empower Psychiatry",
+  "url": "https://empowerpsychiatryil.com",
+  "review": testimonials.map((t) => ({
+    "@type": "Review",
+    ...(t.title ? { name: t.title } : {}),
+    "reviewBody": t.body,
+    "author": { "@type": "Person", "name": "Anonymous Patient" },
+    "itemReviewed": { "@id": "https://empowerpsychiatryil.com/#practice" }
+  }))
+};
+
+const star = '★';
+---
+
+<Base
+  title="Patient Feedback — Empower Complete Care Psychiatry"
+  description="What patients and families say about their experience with Empower Complete Care Psychiatry."
+  jsonLd={[reviewSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="feedback-hero">
+        <div class="feedback-hero-image reveal">
+          <img src="/assets/images/kids.png" alt="Patients" />
+          <a
+            href="https://g.page/r/CUybWbNU90jAEBM/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn feedback-read-more-btn"
+          >
+            Share Your Review
+          </a>
+        </div>
+
+        <div class="reveal">
+          <h1>
+            <img src="/assets/images/logo.png" alt="Empower Complete Care Psychiatry Logo" class="about-logo" />
+            What Patients Say
+          </h1>
+
+          <div class="testimonials">
+            {testimonials.map((t) => (
+              <a href={t.link} target="_blank" rel="noopener noreferrer" class="testimonial-link">
+                <article class="testimonial">
+                  <div class="testimonial-link-icon">🔗</div>
+                  <div class="testimonial-stars">{star.repeat(t.stars)}</div>
+                  {t.title && <h3>{t.title}</h3>}
+                  <p>{t.body}</p>
+                  <div class="testimonial-meta">
+                    <span>{t.date}</span>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
