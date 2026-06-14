@@ -32,6 +32,17 @@ const {
   ))}
 
   <slot name="head" />
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <script is:inline>
+    // Forward Netlify Identity invite/confirmation tokens to /admin/
+    // The invite email links to yourdomain.com/#invite_token=xxx but
+    // the CMS lives at /admin/, so we catch it here and redirect.
+    if (window.location.hash && window.location.hash.includes('_token')) {
+      window.location.replace('/admin/' + window.location.hash);
+    }
+  </script>
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
