@@ -3,7 +3,7 @@ title: How to Know That It's Time
 description: An introduction
 date: 2026-06-14
 author: Dr. Mushtaq
-draft: false
+draft: true
 ---
 This is a sample post so you can see how the blog works. Replace it with yourown writing, or delete it once you've published a real post.
 
