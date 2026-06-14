@@ -1,5 +1,5 @@
 ---
-title: How to Know That It's Time
+title: Check Me Out
 description: An introduction (currently in draft mode)
 date: 2026-06-14
 author: Dr. Mushtaq
