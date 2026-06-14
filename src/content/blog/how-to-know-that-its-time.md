@@ -11,11 +11,10 @@ This is a sample post so you can see how the blog works. Replace it with yourown
 
 Each post is a single file. You can write in **bold**, *italics*, lists, links,and headings — all of which render automatically:
 
-* Add a new post from the CMS ("New Blog Post"), or
-* Create a new `.md` file in `src/content/blog/`.
+* Add a new post from the CMS ("New Blog Post")
 
 ## What controls the post
 
-The block at the very top (between the `---` lines) is the post's settings:its title, description, date, and author. Everything below it is the post body.
+The block at the very top (between the `---` lines) is the post's settings: its title, description, date, and author. Everything below it is the post body.
 
 When you publish, the post appears automatically on the Blog page, newestfirst, and gets its own page.
