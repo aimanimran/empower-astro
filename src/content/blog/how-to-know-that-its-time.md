@@ -1,6 +1,6 @@
 ---
 title: How to Know That It's Time
-description: An introduction
+description: An introduction (currently in draft mode)
 date: 2026-06-14
 author: Dr. Mushtaq
 draft: true
