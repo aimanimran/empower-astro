@@ -18,4 +18,33 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+// "resources" collection: each .md file is one resource-library topic page
+// (Anxiety, ADHD, etc). The CMS edits the intro/sidebar fields and the
+// Markdown body (the main article).
+const resources = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/resources' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    organizations: z
+      .array(z.object({ label: z.string(), url: z.string() }))
+      .default([]),
+    crisisSupportText: z.string().optional(),
+    whenToSeekText: z.string().optional(),
+  }),
+});
+
+// "testimonials" collection: each .md file is one patient review shown on
+// the Feedback page. `order` controls display order (lower = shown first).
+const testimonials = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/testimonials' }),
+  schema: z.object({
+    title: z.string().optional(),
+    stars: z.number().min(1).max(5).default(5),
+    date: z.string(),
+    link: z.string().optional(),
+    order: z.number().default(0),
+  }),
+});
+
+export const collections = { blog, resources, testimonials };

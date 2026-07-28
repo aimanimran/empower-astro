@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "headline": "Evidence Based, Complete-Care Psychiatry",
+    "subheadline": "— Beyond Medication Management",
+    "ctaPrimaryLabel": "Schedule a Consultation",
+    "ctaPrimaryUrl": "/contact",
+    "ctaSecondaryLabel": "View Our Services",
+    "ctaSecondaryUrl": "/services"
+  },
+  "philosophy": {
+    "eyebrow": "Our Philosophy",
+    "title": "More Than Medicine",
+    "description": "True healing happens when we address the whole person—their mind, environment, relationships, and potential. Our collaborative approach ensures no one walks this path alone.",
+    "pillar1": {
+      "title": "Family Partnership",
+      "body": "Healing is stronger with support. We help families and loved ones understand the process and participate with confidence."
+    },
+    "pillar2": {
+      "title": "Community Connections",
+      "body": "Connection creates momentum. We guide patients toward communities and activities that nurture purpose and belonging."
+    },
+    "pillar3": {
+      "title": "Care Team Coordination",
+      "body": "Integrated care matters. We work closely with therapists, physicians, schools, and specialists to keep treatment aligned."
+    },
+    "pillar4": {
+      "title": "Social Services Resources",
+      "body": "Wellness depends on stability. We help access practical resources that support daily life and long-term progress."
+    }
+  },
+  "whyChooseUs": {
+    "title": "Why Families Choose Us",
+    "description": "Because exceptional care should be timely, personal, and connected to every part of a person's life.",
+    "item1": {
+      "title": "Same-Day Response",
+      "body": "Calls returned promptly, almost always on the same day."
+    },
+    "item2": {
+      "title": "Appointments Within One Week",
+      "body": "Timely access to care when families need it most."
+    },
+    "item3": {
+      "title": "Holistic Approach",
+      "body": "Whole-person care tailored to each person's needs."
+    },
+    "item4": {
+      "title": "Specialist Referrals",
+      "body": "Referrals to trusted diagnostic partners and therapists."
+    },
+    "item5": {
+      "title": "School Coordination",
+      "body": "Collaboration with schools and agencies to support student wellbeing and success."
+    },
+    "videoUrl": "https://www.youtube.com/embed/trVto0Mnadc?rel=0"
+  }
+}

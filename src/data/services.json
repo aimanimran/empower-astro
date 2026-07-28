@@ -1,0 +1,43 @@
+{
+  "logo": "/assets/images/logo.png",
+  "heading": "Comprehensive Services",
+  "description": "Every service we provide incorporates the latest evidence-based treatments and medication advances, while carefully considering side effects, long-term wellbeing, and the right fit for each unique patient.",
+  "cards": [
+    {
+      "title": "Comprehensive Evaluations",
+      "description": "Through comprehensive psychiatric evaluations, that consider each individual's history, environment, and unique needs using the latest tools, frameworks, and clinical insights.",
+      "tags": ["ADHD Assessment", "Mood Disorders", "Anxiety Evaluations", "Developmental Concerns"]
+    },
+    {
+      "title": "Medication Management",
+      "description": "When medication is appropriate, we carefully monitor and adjust treatment while minimizing side effects and supporting long-term wellbeing.",
+      "tags": ["Regular Monitoring", "Precision Medication Tech", "Conservative Approach"]
+    },
+    {
+      "title": "Family Guidance",
+      "description": "Families receive practical guidance, education, and support to help reinforce progress and create stability at home.",
+      "tags": ["Parent Coaching", "IEP/504 Support", "Communication", "Behaviour Strategies"]
+    },
+    {
+      "title": "Care Coordination",
+      "description": "We work closely with therapists, physicians, schools, and support systems to ensure care remains connected, consistent, and effective.",
+      "tags": ["School Consultations", "Therapist Coordination", "Specialist Referrals"]
+    }
+  ],
+  "conditionsHeading": "Conditions We Treat",
+  "conditionsImage": "/assets/images/conditions.png",
+  "conditionsList": [
+    "Bipolar Disorder, Depression",
+    "OCD, Anxiety Disorders, Panic Disorder",
+    "Dementia",
+    "PTSD",
+    "Psychotic Disorders",
+    "Autism Spectrum Disorder",
+    "Developmental Disorders of Infancy and Early Childhood",
+    "Pre and post partum Psychiatric disorders",
+    "Impulse Control Disorders",
+    "Low Self Esteem and Body image issues",
+    "Oppositional Defiant Disorders",
+    "Disruptive Behaviors"
+  ]
+}

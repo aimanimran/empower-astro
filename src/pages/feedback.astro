@@ -1,6 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
-import { testimonials } from '../data/testimonials.js';
+import { getCollection, render } from 'astro:content';
+
+// Testimonials are edited from the CMS at /admin -> "Patient Testimonials".
+// Each one is its own file, sorted by the "order" field (lower = first).
+const testimonialEntries = await getCollection('testimonials');
+testimonialEntries.sort((a, b) => a.data.order - b.data.order);
+
+const testimonials = await Promise.all(
+  testimonialEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { ...entry.data, Content, id: entry.id };
+  })
+);
 
 // Build review schema from the same testimonial data.
 const reviewSchema = {
@@ -9,10 +21,9 @@ const reviewSchema = {
   "@id": "https://empowerpsychiatryil.com/#practice",
   "name": "Empower Psychiatry",
   "url": "https://empowerpsychiatryil.com",
-  "review": testimonials.map((t) => ({
+  "review": testimonialEntries.map((t) => ({
     "@type": "Review",
-    ...(t.title ? { name: t.title } : {}),
-    "reviewBody": t.body,
+    ...(t.data.title ? { name: t.data.title } : {}),
     "author": { "@type": "Person", "name": "Anonymous Patient" },
     "itemReviewed": { "@id": "https://empowerpsychiatryil.com/#practice" }
   }))
@@ -48,19 +59,22 @@ const star = '★';
           </h1>
 
           <div class="testimonials">
-            {testimonials.map((t) => (
-              <a href={t.link} target="_blank" rel="noopener noreferrer" class="testimonial-link">
-                <article class="testimonial">
-                  <div class="testimonial-link-icon">🔗</div>
-                  <div class="testimonial-stars">{star.repeat(t.stars)}</div>
-                  {t.title && <h3>{t.title}</h3>}
-                  <p>{t.body}</p>
-                  <div class="testimonial-meta">
-                    <span>{t.date}</span>
-                  </div>
-                </article>
-              </a>
-            ))}
+            {testimonials.map((t) => {
+              const TestimonialBody = t.Content;
+              return (
+                <a href={t.link} target="_blank" rel="noopener noreferrer" class="testimonial-link">
+                  <article class="testimonial">
+                    <div class="testimonial-link-icon">🔗</div>
+                    <div class="testimonial-stars">{star.repeat(t.stars)}</div>
+                    {t.title && <h3>{t.title}</h3>}
+                    <TestimonialBody />
+                    <div class="testimonial-meta">
+                      <span>{t.date}</span>
+                    </div>
+                  </article>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

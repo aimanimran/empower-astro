@@ -1,35 +1,21 @@
 // =====================================================================
 // CENTRAL SITE DATA
 // ---------------------------------------------------------------------
-// Edit values here and they cascade everywhere: nav, footer, contact
-// info, schema.org metadata, etc. This is also what the CMS writes to
-// (see public/admin/config.yml -> "Site Settings" collection if you
-// later promote these into the CMS).
+// The practice info below (phone, address, hours, etc.) now lives in
+// site.json and is editable from the CMS at /admin -> "Website Pages" ->
+// "Practice Info & Contact Details". Editing it there updates the nav,
+// footer, contact page, and schema.org metadata everywhere at once.
+//
+// `resourceTopics`, `navItems`, and `footerLinks` below are left as code
+// (not CMS-editable) because they define the site's navigation structure
+// and page routing — changing a slug here without also creating/renaming
+// the matching page would break links.
 // =====================================================================
+import siteContent from './site.json';
 
 export const site = {
-  name: 'Empower Psychiatry',
-  legalName: 'Empower Psychiatry PLLC',
-  fullName: 'Empower Complete Care Psychiatry',
+  ...siteContent,
   url: 'https://empowerpsychiatryil.com',
-  phone: '630-326-3840',
-  phoneRaw: '6303263840',
-  fax: '630-326-3848',
-  faxRaw: '6303263848',
-  emailAppointments: 'Appointments@EmpowerMDIL.com',
-  emailOffice: 'Office@EmpowerMDIL.com',
-  bookingUrl: 'https://empowerpsychiatryil.clientsecure.me',
-  address: {
-    street: '303 E Army Trail Rd, Suite 111',
-    locality: 'Bloomingdale',
-    region: 'IL',
-    postalCode: '60108',
-    country: 'US',
-  },
-  mapUrl:
-    'https://maps.google.com/?q=303+E+Army+Trail+Rd,+Suite+111,+Bloomingdale,+IL+60108',
-  insurances:
-    'Accepting Medicaid and most commercial insurance plans including Aetna, Aetna Better Health, Ambetter, BCBS, BCBS Community Health Plan, Humana, Cigna, County Care, United Behavioral, Medicare, Meridian, Molina, WellCare.',
 };
 
 // Resources sub-pages — used by the nav dropdown AND the resources index grid.

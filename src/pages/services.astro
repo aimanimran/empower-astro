@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import services from '../data/services.json';
 
 const businessSchema = {
   "@context": "https://schema.org",
@@ -57,77 +58,34 @@ const webPageSchema = {
   <section class="section">
     <div class="container">
       <div class="services-intro reveal">
-        <img src="/assets/images/logo.png" alt="Empower Complete Care Psychiatry Logo" class="logo-mark" />
+        <img src={services.logo} alt="Empower Complete Care Psychiatry Logo" class="logo-mark" />
         <div>
-          <h1>Comprehensive Services</h1>
-          <p>Every service we provide incorporates the latest evidence-based treatments and medication advances, while carefully considering side effects, long-term wellbeing, and the right fit for each unique patient.</p>
+          <h1>{services.heading}</h1>
+          <p>{services.description}</p>
         </div>
       </div>
 
       <div class="service-cards">
-        <article class="service-card reveal">
-          <h3>Comprehensive Evaluations</h3>
-          <p>Through comprehensive psychiatric evaluations, that consider each individual's history, environment, and unique needs using the latest tools, frameworks, and clinical insights.</p>
-          <div class="tag-list">
-            <span class="tag">ADHD Assessment</span>
-            <span class="tag">Mood Disorders</span>
-            <span class="tag">Anxiety Evaluations</span>
-            <span class="tag">Developmental Concerns</span>
-          </div>
-        </article>
-
-        <article class="service-card reveal">
-          <h3>Medication Management</h3>
-          <p>When medication is appropriate, we carefully monitor and adjust treatment while minimizing side effects and supporting long-term wellbeing.</p>
-          <div class="tag-list">
-            <span class="tag">Regular Monitoring</span>
-            <span class="tag">Precision Medication Tech</span>
-            <span class="tag">Conservative Approach</span>
-          </div>
-        </article>
-
-        <article class="service-card reveal">
-          <h3>Family Guidance</h3>
-          <p>Families receive practical guidance, education, and support to help reinforce progress and create stability at home.</p>
-          <div class="tag-list">
-            <span class="tag">Parent Coaching</span>
-            <span class="tag">IEP/504 Support</span>
-            <span class="tag">Communication</span>
-            <span class="tag">Behaviour Strategies</span>
-          </div>
-        </article>
-
-        <article class="service-card reveal">
-          <h3>Care Coordination</h3>
-          <p>We work closely with therapists, physicians, schools, and support systems to ensure care remains connected, consistent, and effective.</p>
-          <div class="tag-list">
-            <span class="tag">School Consultations</span>
-            <span class="tag">Therapist Coordination</span>
-            <span class="tag">Specialist Referrals</span>
-          </div>
-        </article>
+        {services.cards.map((card) => (
+          <article class="service-card reveal">
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+            <div class="tag-list">
+              {card.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
+          </article>
+        ))}
       </div>
 
       <div class="conditions-block reveal">
         <div>
-          <h2 style="margin-bottom: 1.5rem;">Conditions We Treat</h2>
+          <h2 style="margin-bottom: 1.5rem;">{services.conditionsHeading}</h2>
           <ul class="conditions-list">
-            <li>Bipolar Disorder, Depression</li>
-            <li>OCD, Anxiety Disorders, Panic Disorder</li>
-            <li>Dementia</li>
-            <li>PTSD</li>
-            <li>Psychotic Disorders</li>
-            <li>Autism Spectrum Disorder</li>
-            <li>Developmental Disorders of Infancy and Early Childhood</li>
-            <li>Pre and post partum Psychiatric disorders</li>
-            <li>Impulse Control Disorders</li>
-            <li>Low Self Esteem and Body image issues</li>
-            <li>Oppositional Defiant Disorders</li>
-            <li>Disruptive Behaviors</li>
+            {services.conditionsList.map((condition) => <li>{condition}</li>)}
           </ul>
         </div>
         <div class="conditions-visual">
-          <img src="/assets/images/conditions.png" alt="Mental health support and wellness" class="conditions-image" />
+          <img src={services.conditionsImage} alt="Mental health support and wellness" class="conditions-image" />
         </div>
       </div>
     </div>

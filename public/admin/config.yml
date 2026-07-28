@@ -45,3 +45,201 @@ collections:
       - { name: "image", label: "Hero Image (optional)", widget: "image", required: false }
       - { name: "draft", label: "Draft? (hide from site)", widget: "boolean", default: false, required: false }
       - { name: "body", label: "Post Content", widget: "markdown" }
+
+  # -----------------------------------------------------------------
+  # Resource Library pages — ADHD, Anxiety, Depression, etc. One
+  # Markdown file per topic under content/resources. The main article
+  # is a single Markdown box; the three sidebar boxes are simple fields
+  # so the links/short blurbs keep their card styling.
+  #
+  # NOTE: these 7 topics are wired into the nav menu and the Resources
+  # grid in code (src/data/site.js). Don't add/delete entries here —
+  # edit the existing 7 only, or ask your developer to add a new one.
+  # -----------------------------------------------------------------
+  - name: "resources"
+    label: "Resource Pages"
+    label_singular: "Resource Page"
+    folder: "src/content/resources"
+    create: false
+    delete: false
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "title", label: "Page Title", widget: "string" }
+      - { name: "description", label: "Short Description (shown at top of page & in SEO)", widget: "text" }
+      - name: "organizations"
+        label: "Trusted Organizations (sidebar links)"
+        widget: "list"
+        required: false
+        fields:
+          - { name: "label", label: "Link Text", widget: "string" }
+          - { name: "url", label: "Link URL", widget: "string" }
+      - { name: "crisisSupportText", label: "\"Local & Crisis Support\" Sidebar Box (leave blank to hide)", widget: "text", required: false }
+      - { name: "whenToSeekText", label: "\"When To Seek Help\" Sidebar Box (leave blank to hide)", widget: "text", required: false }
+      - { name: "body", label: "Main Article Content", widget: "markdown", hint: "Use ## for section headings, and the bullet-list button for symptom lists." }
+
+  # -----------------------------------------------------------------
+  # Patient testimonials shown on the Feedback page. One file per
+  # review — add, edit, remove, and reorder freely (like blog posts).
+  # Lower "Sort Order" numbers show first.
+  # -----------------------------------------------------------------
+  - name: "testimonials"
+    label: "Patient Testimonials"
+    label_singular: "Testimonial"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: ["order", "date"]
+    fields:
+      - { name: "title", label: "Headline (optional)", widget: "string", required: false }
+      - { name: "stars", label: "Star Rating (1-5)", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+      - { name: "date", label: "Date (as shown on the card, e.g. \"April 2026\")", widget: "string" }
+      - { name: "link", label: "Link To Full Review (optional)", widget: "string", required: false }
+      - { name: "order", label: "Sort Order (lower numbers show first)", widget: "number", value_type: "int", default: 0 }
+      - { name: "body", label: "Review Text", widget: "markdown" }
+
+  # -----------------------------------------------------------------
+  # Website Pages — one editable "file" per page/section. These map
+  # straight to the JSON files in src/data/ that the .astro pages read.
+  # Fields not listed here (nav labels, page URLs, SVG icons, schema.org
+  # SEO data) stay in code so editing content here can't break a link
+  # or the page layout.
+  # -----------------------------------------------------------------
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - file: "src/data/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - name: "hero"
+            label: "Hero (top banner)"
+            widget: "object"
+            fields:
+              - { name: "headline", label: "Headline", widget: "string" }
+              - { name: "subheadline", label: "Subheadline", widget: "string" }
+              - { name: "ctaPrimaryLabel", label: "Primary Button Text", widget: "string" }
+              - { name: "ctaPrimaryUrl", label: "Primary Button Link", widget: "string" }
+              - { name: "ctaSecondaryLabel", label: "Secondary Button Text", widget: "string" }
+              - { name: "ctaSecondaryUrl", label: "Secondary Button Link", widget: "string" }
+          - name: "philosophy"
+            label: "\"More Than Medicine\" Section"
+            widget: "object"
+            fields:
+              - { name: "eyebrow", label: "Small Label Above Title", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - name: "pillar1"
+                label: "Pillar 1"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "pillar2"
+                label: "Pillar 2"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "pillar3"
+                label: "Pillar 3"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "pillar4"
+                label: "Pillar 4"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+          - name: "whyChooseUs"
+            label: "\"Why Families Choose Us\" Section"
+            widget: "object"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - name: "item1"
+                label: "Reason 1"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "item2"
+                label: "Reason 2"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "item3"
+                label: "Reason 3"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "item4"
+                label: "Reason 4"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - name: "item5"
+                label: "Reason 5"
+                widget: "object"
+                fields: [{ name: "title", widget: "string" }, { name: "body", widget: "text" }]
+              - { name: "videoUrl", label: "YouTube Embed URL", widget: "string", hint: "Use the embed link, e.g. https://www.youtube.com/embed/VIDEO_ID" }
+
+      - file: "src/data/about.json"
+        label: "About Page"
+        name: "about"
+        fields:
+          - { name: "heading", label: "Heading", widget: "string" }
+          - { name: "photo", label: "Doctor Photo", widget: "image" }
+          - { name: "bio", label: "Biography", widget: "text", hint: "Leave a blank line between paragraphs." }
+
+      - file: "src/data/services.json"
+        label: "Services Page"
+        name: "services"
+        fields:
+          - { name: "logo", label: "Logo", widget: "image" }
+          - { name: "heading", label: "Heading", widget: "string" }
+          - { name: "description", label: "Intro Description", widget: "text" }
+          - name: "cards"
+            label: "Service Cards"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "tags", label: "Tags", widget: "list" }
+          - { name: "conditionsHeading", label: "\"Conditions We Treat\" Heading", widget: "string" }
+          - { name: "conditionsImage", label: "\"Conditions We Treat\" Image", widget: "image" }
+          - { name: "conditionsList", label: "Conditions List", widget: "list" }
+
+      - file: "src/data/contact.json"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - { name: "logo", label: "Logo", widget: "image" }
+          - { name: "heading", label: "Heading", widget: "string" }
+          - { name: "officeImage", label: "Office Photo", widget: "image" }
+          - { name: "officeRemoteText", label: "\"Remote Sessions\" Text", widget: "string" }
+
+      - file: "src/data/site.json"
+        label: "Practice Info & Contact Details"
+        name: "site"
+        hint: "Used site-wide: nav, footer, contact page, and Google/SEO listings. Changing the address here does not move your office — update it everywhere else (Google Business Profile, insurance panels, etc.) too."
+        fields:
+          - { name: "name", label: "Practice Name (short)", widget: "string" }
+          - { name: "legalName", label: "Legal Name", widget: "string" }
+          - { name: "fullName", label: "Full/Display Name", widget: "string" }
+          - { name: "phone", label: "Phone (display, e.g. 630-326-3840)", widget: "string" }
+          - { name: "phoneRaw", label: "Phone (digits only, e.g. 6303263840)", widget: "string" }
+          - { name: "fax", label: "Fax (display)", widget: "string" }
+          - { name: "faxRaw", label: "Fax (digits only)", widget: "string" }
+          - { name: "emailAppointments", label: "Appointments Email", widget: "string" }
+          - { name: "emailOffice", label: "Office Email", widget: "string" }
+          - { name: "bookingUrl", label: "Online Booking Link", widget: "string" }
+          - name: "address"
+            label: "Office Address"
+            widget: "object"
+            fields:
+              - { name: "street", label: "Street", widget: "string" }
+              - { name: "locality", label: "City", widget: "string" }
+              - { name: "region", label: "State", widget: "string" }
+              - { name: "postalCode", label: "ZIP Code", widget: "string" }
+              - { name: "country", label: "Country Code", widget: "string" }
+          - { name: "mapUrl", label: "Google Maps Link", widget: "string" }
+          - { name: "insurances", label: "Insurances Accepted (footer text)", widget: "text" }
+          - name: "hours"
+            label: "Office Hours"
+            widget: "object"
+            fields:
+              - { name: "inPerson", label: "In-Person Hours (one line per entry)", widget: "list" }
+              - { name: "telepsychiatry", label: "Telepsychiatry Hours (one line per entry)", widget: "list" }

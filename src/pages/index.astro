@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import home from '../data/home.json';
 
 const practiceSchema = {
   "@context": "https://schema.org",
@@ -78,16 +79,16 @@ const websiteSchema = {
       <img src="/assets/images/full_logo.png" alt="Empower Complete Care Psychiatry Logo" class="hero-logo-image" />
     </div>
 
-    <h1 class="hero-headline">Evidence Based, Complete-Care Psychiatry</h1>
-    <p class="hero-sub">— Beyond Medication Management</p>
+    <h1 class="hero-headline">{home.hero.headline}</h1>
+    <p class="hero-sub">{home.hero.subheadline}</p>
 
     <div class="hero-cta">
-      <a href="/contact" class="btn btn-lg">
-        Schedule a Consultation
+      <a href={home.hero.ctaPrimaryUrl} class="btn btn-lg">
+        {home.hero.ctaPrimaryLabel}
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services" class="btn btn-lg">
-        View Our Services
+      <a href={home.hero.ctaSecondaryUrl} class="btn btn-lg">
+        {home.hero.ctaSecondaryLabel}
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -97,9 +98,9 @@ const websiteSchema = {
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-eyebrow">Our Philosophy</div>
-        <h2 class="section-title">More Than Medicine</h2>
-        <p class="section-desc">True healing happens when we address the whole person—their mind, environment, relationships, and potential. Our collaborative approach ensures no one walks this path alone.</p>
+        <div class="section-eyebrow">{home.philosophy.eyebrow}</div>
+        <h2 class="section-title">{home.philosophy.title}</h2>
+        <p class="section-desc">{home.philosophy.description}</p>
       </div>
 
       <div class="pillars">
@@ -108,8 +109,8 @@ const websiteSchema = {
             <circle cx="10" cy="11" r="3"/><circle cx="22" cy="11" r="3"/>
             <path d="M4 24c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 24c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
           </svg>
-          <h3>Family Partnership</h3>
-          <p>Healing is stronger with support. We help families and loved ones understand the process and participate with confidence.</p>
+          <h3>{home.philosophy.pillar1.title}</h3>
+          <p>{home.philosophy.pillar1.body}</p>
         </article>
 
         <article class="pillar reveal">
@@ -120,8 +121,8 @@ const websiteSchema = {
             <line x1="16" y1="8" x2="16" y2="13"/><line x1="16" y1="19" x2="16" y2="24"/>
             <line x1="8" y1="16" x2="13" y2="16"/><line x1="19" y1="16" x2="24" y2="16"/>
           </svg>
-          <h3>Community Connections</h3>
-          <p>Connection creates momentum. We guide patients toward communities and activities that nurture purpose and belonging.</p>
+          <h3>{home.philosophy.pillar2.title}</h3>
+          <p>{home.philosophy.pillar2.body}</p>
         </article>
 
         <article class="pillar reveal">
@@ -130,8 +131,8 @@ const websiteSchema = {
             <path d="M10 10V8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2"/>
             <line x1="16" y1="14" x2="16" y2="22"/><line x1="12" y1="18" x2="20" y2="18"/>
           </svg>
-          <h3>Care Team Coordination</h3>
-          <p>Integrated care matters. We work closely with therapists, physicians, schools, and specialists to keep treatment aligned.</p>
+          <h3>{home.philosophy.pillar3.title}</h3>
+          <p>{home.philosophy.pillar3.body}</p>
         </article>
 
         <article class="pillar reveal">
@@ -139,8 +140,8 @@ const websiteSchema = {
             <path d="M16 4 C 10 10, 6 14, 6 19 a 10 10 0 0 0 20 0 C 26 14, 22 10, 16 4z"/>
             <path d="M16 12v10"/><path d="M12 17h8"/>
           </svg>
-          <h3>Social Services Resources</h3>
-          <p>Wellness depends on stability. We help access practical resources that support daily life and long-term progress.</p>
+          <h3>{home.philosophy.pillar4.title}</h3>
+          <p>{home.philosophy.pillar4.body}</p>
         </article>
       </div>
     </div>
@@ -150,39 +151,39 @@ const websiteSchema = {
   <section class="section">
     <div class="container">
       <div class="section-header reveal" style="text-align:left; max-width:none;">
-        <h2 class="section-title" style="text-align:left;">Why Families Choose Us</h2>
+        <h2 class="section-title" style="text-align:left;">{home.whyChooseUs.title}</h2>
         <p class="section-desc" style="text-align:left;">
-          Because exceptional care should be timely, personal, and connected to every part of a person's life.
+          {home.whyChooseUs.description}
         </p>
       </div>
 
       <div class="why-layout">
         <div class="why-content reveal">
           <div class="why-simple-item">
-            <h4>Same-Day Response</h4>
-            <p>Calls returned promptly, almost always on the same day.</p>
+            <h4>{home.whyChooseUs.item1.title}</h4>
+            <p>{home.whyChooseUs.item1.body}</p>
           </div>
           <div class="why-simple-item">
-            <h4>Appointments Within One Week</h4>
-            <p>Timely access to care when families need it most.</p>
+            <h4>{home.whyChooseUs.item2.title}</h4>
+            <p>{home.whyChooseUs.item2.body}</p>
           </div>
           <div class="why-simple-item">
-            <h4>Holistic Approach</h4>
-            <p>Whole-person care tailored to each person's needs.</p>
+            <h4>{home.whyChooseUs.item3.title}</h4>
+            <p>{home.whyChooseUs.item3.body}</p>
           </div>
           <div class="why-simple-item">
-            <h4>Specialist Referrals</h4>
-            <p>Referrals to trusted diagnostic partners and therapists.</p>
+            <h4>{home.whyChooseUs.item4.title}</h4>
+            <p>{home.whyChooseUs.item4.body}</p>
           </div>
           <div class="why-simple-item">
-            <h4>School Coordination</h4>
-            <p>Collaboration with schools and agencies to support student wellbeing and success.</p>
+            <h4>{home.whyChooseUs.item5.title}</h4>
+            <p>{home.whyChooseUs.item5.body}</p>
           </div>
         </div>
 
         <div class="why-video reveal">
           <iframe
-            src="https://www.youtube.com/embed/trVto0Mnadc?rel=0"
+            src={home.whyChooseUs.videoUrl}
             title="Empower Psychiatry Introduction Video"
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"

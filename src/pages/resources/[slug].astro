@@ -1,0 +1,107 @@
+---
+import { getCollection, render } from 'astro:content';
+import ResourcePage from '../../components/ResourcePage.astro';
+
+// Each resource topic (ADHD, Anxiety, etc.) is one Markdown file under
+// src/content/resources, edited from the CMS at /admin -> "Resource Pages".
+// This single route renders whichever entry matches the URL slug, so
+// there's no per-topic .astro file to touch when the copy changes.
+export async function getStaticPaths() {
+  const resourceSlugAliases = {
+    adhd: 'adhd-resources',
+    anxiety: 'anxiety-resources',
+    autism: 'autism-resources',
+    childfamily: 'child-family-resources',
+    dementia: 'dementia-resources',
+    depression: 'depression-resources',
+    ocdptsd: 'ocd-ptsd-resources',
+  };
+
+  const resources = await getCollection('resources');
+
+  return resources.flatMap((entry) => {
+    const slugs = [entry.id];
+    const alias = resourceSlugAliases[entry.id];
+
+    if (alias) {
+      slugs.push(alias);
+    }
+
+    return slugs.map((slug) => ({
+      params: { slug },
+      props: { entry },
+    }));
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, organizations, crisisSupportText, whenToSeekText } = entry.data;
+const resourceSlugAliases = {
+  adhd: 'adhd-resources',
+  anxiety: 'anxiety-resources',
+  autism: 'autism-resources',
+  childfamily: 'child-family-resources',
+  dementia: 'dementia-resources',
+  depression: 'depression-resources',
+  ocdptsd: 'ocd-ptsd-resources',
+};
+const canonicalSlug = resourceSlugAliases[entry.id] ?? entry.id;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": title,
+    "description": description,
+    "url": `https://empowerpsychiatryil.com/resources/${canonicalSlug}`,
+    "about": title,
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "Empower Psychiatry",
+      "url": "https://empowerpsychiatryil.com",
+      "telephone": "+1-630-326-3840",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "303 E Army Trail Rd, Suite 111",
+        "addressLocality": "Bloomingdale",
+        "addressRegion": "IL",
+        "postalCode": "60108"
+      }
+    }
+  }
+];
+---
+
+<ResourcePage title={title} description={description} jsonLd={jsonLd}>
+  <article class="resource-main-content reveal">
+    <Content />
+  </article>
+
+  <aside class="resource-sidebar reveal">
+    {organizations && organizations.length > 0 && (
+      <div class="resource-sidebar-card">
+        <h3>Trusted Organizations</h3>
+        <ul>
+          {organizations.map((org) => (
+            <li><a href={org.url} target="_blank" rel="noopener noreferrer">{org.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {crisisSupportText && (
+      <div class="resource-sidebar-card">
+        <h3>Local &amp; Crisis Support</h3>
+        <p>{crisisSupportText}</p>
+      </div>
+    )}
+
+    {whenToSeekText && (
+      <div class="resource-sidebar-card">
+        <h3>When To Seek Help</h3>
+        <p>{whenToSeekText}</p>
+      </div>
+    )}
+  </aside>
+</ResourcePage>
