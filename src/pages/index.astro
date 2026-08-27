@@ -75,22 +75,37 @@ const websiteSchema = {
 >
   <!-- ===== HERO ===== -->
   <section class="hero container">
-    <div class="hero-logo">
-      <img src="/assets/images/full_logo.png" alt="Empower Complete Care Psychiatry Logo" class="hero-logo-image" />
-    </div>
+    <div class="hero-inner">
+      <div class="hero-media" aria-hidden="false">
+        <div class="hero-video-wrap">
+          <video id="heroVideo" class="hero-video" src="/assets/Empower%20Intro.mp4" autoplay muted loop playsinline controls poster="/assets/images/full_logo.png">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
 
-    <h1 class="hero-headline">{home.hero.headline}</h1>
-    <p class="hero-sub">{home.hero.subheadline}</p>
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="/assets/images/full_logo.png" alt="Empower Complete Care Psychiatry Logo" class="hero-logo-image" />
+        </div>
 
-    <div class="hero-cta">
-      <a href={home.hero.ctaPrimaryUrl} class="btn btn-lg">
-        {home.hero.ctaPrimaryLabel}
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a href={home.hero.ctaSecondaryUrl} class="btn btn-lg">
-        {home.hero.ctaSecondaryLabel}
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+        <h1 class="hero-headline">
+          <span class="hero-headline-line">{home.hero.headline.split(', ')[0]},</span>
+          <span class="hero-headline-line">{home.hero.headline.split(', ')[1]}</span>
+        </h1>
+        <p class="hero-sub">{home.hero.subheadline}</p>
+
+        <div class="hero-cta">
+          <a href={home.hero.ctaPrimaryUrl} class="btn btn-lg">
+            {home.hero.ctaPrimaryLabel}
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href={home.hero.ctaSecondaryUrl} class="btn btn-lg">
+            {home.hero.ctaSecondaryLabel}
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -179,17 +194,6 @@ const websiteSchema = {
             <h4>{home.whyChooseUs.item5.title}</h4>
             <p>{home.whyChooseUs.item5.body}</p>
           </div>
-        </div>
-
-        <div class="why-video reveal">
-          <iframe
-            src={home.whyChooseUs.videoUrl}
-            title="Empower Psychiatry Introduction Video"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
         </div>
       </div>
     </div>

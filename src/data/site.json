@@ -19,7 +19,7 @@
   "mapUrl": "https://maps.google.com/?q=303+E+Army+Trail+Rd,+Suite+111,+Bloomingdale,+IL+60108",
   "insurances": "Accepting Medicaid and most commercial insurance plans including Aetna, Aetna Better Health, Ambetter, BCBS, BCBS Community Health Plan, Humana, Cigna, County Care, United Behavioral, Medicare, Meridian, Molina, WellCare.",
   "hours": {
-    "inPerson": ["Tuesdays: 3–6 PM", "Fridays: 1–6 PM", "Saturdays: 10–6 PM"],
-    "telepsychiatry": ["Weekdays: 3:30–6 PM"]
+    "inPerson": ["Saturdays: 10–6 PM"],
+    "telepsychiatry": ["Tuesdays and Wednesdays: 2:30–6 PM", "Fridays: 1-6 PM"]
   }
 }

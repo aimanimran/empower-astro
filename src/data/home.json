@@ -1,7 +1,7 @@
 {
   "hero": {
-    "headline": "Evidence Based, Complete-Care Psychiatry",
-    "subheadline": "- Beyond Medication Management",
+    "headline": "Evidence-based, Complete Care Psychiatry",
+    "subheadline": "Beyond Medication Management",
     "ctaPrimaryLabel": "Schedule a Consultation",
     "ctaPrimaryUrl": "/contact",
     "ctaSecondaryLabel": "View Our Services",
@@ -51,6 +51,6 @@
       "title": "School Coordination",
       "body": "Collaboration with schools and agencies to support student wellbeing and success."
     },
-    "videoUrl": "https://www.youtube.com/embed/trVto0Mnadc?rel=0"
+    "videoUrl": "https://www.youtube.com/embed/vlVxFizLYVY?rel=0"
   }
 }
