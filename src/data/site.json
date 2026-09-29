@@ -5,12 +5,15 @@
   "phone": "630-326-3840",
   "hours": {
     "inPerson": [
-      "Every Month : 1st Friday 10:00 AM - 5:00 PM",
-      "3rd Saturday: 10:00 AM – 6:00 PM"
+      "Each month,"
+      "1st Friday: 10 AM - 5 PM",
+      "3rd Saturday: 10 AM – 6 PM"
     ],
     "telepsychiatry": [
-      "Mondays and Tuesdays: 3:00 PM – 6:00 PM",
-      "Fridays: 10:00 AM - 6:00 PM"
+      "Mondays and Tuesdays: 3 PM – 6 PM",
+      "Wednesdays: 2 PM - 6 PM",
+      "Fridays: 10 AM - 5 PM",
+      "Saturdays: 11 AM - 4 PM"
     ]
   },
   "emailAppointments": "Appointments@EmpowerMDIL.com",
