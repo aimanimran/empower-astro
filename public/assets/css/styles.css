@@ -1040,7 +1040,7 @@ p { margin: 0 0 1em; }
 
 .hours-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.10fr 1fr;
   gap: 2rem;
 }
 
